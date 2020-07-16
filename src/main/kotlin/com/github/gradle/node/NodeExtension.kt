@@ -15,6 +15,8 @@ open class NodeExtension(project: Project) {
     val npmVersion = project.objects.property<String>().convention("")
     val yarnVersion = project.objects.property<String>().convention("")
     val distBaseUrl = project.objects.property<String>()
+    val distUser = project.objects.property<String>()
+    val distPassword = project.objects.property<String>()
     val npmCommand = project.objects.property<String>().convention("npm")
     val npxCommand = project.objects.property<String>().convention("npx")
     val npmInstallCommand = project.objects.property<String>().convention("install")

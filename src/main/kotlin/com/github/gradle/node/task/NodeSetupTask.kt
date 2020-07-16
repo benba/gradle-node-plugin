@@ -5,6 +5,7 @@ import com.github.gradle.node.NodePlugin
 import com.github.gradle.node.util.PlatformHelper
 import com.github.gradle.node.variant.VariantComputer
 import org.gradle.api.DefaultTask
+import org.gradle.api.artifacts.repositories.IvyArtifactRepository
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
@@ -111,6 +112,10 @@ open class NodeSetupTask : DefaultTask() {
             }
             metadataSources {
                 artifact()
+            }
+            credentials {
+                username = nodeExtension.distUser.orNull
+                password = nodeExtension.distPassword.orNull
             }
         }
     }
